@@ -4,13 +4,13 @@
 
 :root {
   font-size: 62.5%;
-  --main-color: #513934;
-  --main-color80: rgba(81, 57, 52, 0.8);
-  --main-color70: rgba(81, 57, 52, 0.7);
-  --main-color60: rgba(81, 57, 52, 0.6);
-  --main-color40: rgba(81, 57, 52, 0.4);
-  --main-color15: rgba(81, 57, 52, 0.15);
-  --main-color10: rgba(81, 57, 52, 0.1);
+  --main-color: #1e5c15;
+  --main-color80: rgba(30, 92, 21, 0.8);
+  --main-color70: rgba(30, 92, 21, 0.7);
+  --main-color60: rgba(30, 92, 21, 0.6);
+  --main-color40: rgba(30, 92, 21, 0.4);
+  --main-color15: rgba(30, 92, 21, 0.15);
+  --main-color10: rgba(30, 92, 21, 0.1);
   --title-color: #272727;
   --text-color: #666666;
   --white100: rgba(255, 255, 255, 1);
@@ -205,6 +205,56 @@ body {
 
 .menu-con-slider {
   cursor: none;
+}
+
+.tab-con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 9.6rem; */
+  margin-top: 5vw;
+}
+
+.tab-item {
+  display: flex;
+  gap: 2rem;
+}
+
+.tab-item li a {
+  display: block;
+  /* width: 20.3rem; */
+  /* width: 15.3788%; */
+  width: 10.5729vw;
+  min-width: 14.4rem;
+  max-width: 20.3rem;
+  /* height: 5.5rem; */
+  aspect-ratio: 1/0.2709;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+}
+
+.tab-item li a.on {
+  background: var(--main-color);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+.tab-item li:hover {
+  background: var(--main-color);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.tab-item li a.on {
+  color: var(--white100);
+  transition: 0.4s;
+}
+.tab-item li:hover a {
+  color: var(--white100);
+  transition: 0.4s;
 }
 
 .cursor {
@@ -576,8 +626,8 @@ nav {
 }
 
 .accredit figure {
-  width: 7.4rem;
-  aspect-ratio: 1/1;
+  width: 18rem;
+  aspect-ratio: 1/0.2128;
 }
 
 .accredit figure img {
@@ -649,6 +699,16 @@ nav {
 .visual figure {
   height: 100vh;
   position: relative;
+}
+
+.visual figure::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black10);
 }
 
 .visual {

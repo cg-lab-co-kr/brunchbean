@@ -180,6 +180,31 @@ if ($(".event-swiper").length) {
   });
 }
 
+// event tab(MAIN)
+
+const $eventTabMenu = $(".event-tab > li");
+const $eventTabCon = $(".event-list");
+
+$eventTabCon.hide();
+$eventTabCon.eq(0).show();
+$eventTabMenu.eq(0).find("a").addClass("on");
+
+$eventTabMenu.on("click", function (e) {
+  e.preventDefault();
+
+  const eventTabIdx = $(this).index();
+
+  $eventTabMenu.find("a").removeClass("on");
+  $(this).find("a").addClass("on");
+
+  $eventTabCon.hide();
+  $eventTabCon.eq(eventTabIdx).show();
+
+  if (eventTabIdx === 0 && window.eventSwiper) {
+    window.eventSwiper.update();
+  }
+});
+
 /* MENU!!!---------------------------------------------- */
 
 // menu-tab(MENU)
@@ -279,7 +304,7 @@ $priceTabMenu.on("click", function (e) {
 const $snsTabMenu = $(".sns-tab > li");
 const $snsTabCon = $(".sns .sns-list");
 
-snsTabAction(1);
+snsTabAction(0);
 
 $snsTabMenu.on("click", function (e) {
   e.preventDefault();
